@@ -123,10 +123,17 @@ function ouibounce(el, custom_config) {
     _html.removeEventListener('keydown', handleKeydown);
   }
 
+  function clearCookie() {
+    document.cookie = cookieName + '=true' +
+      '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;' +
+      cookieDomain + sitewide;
+  }
+
   return {
     fire: fire,
     disable: disable,
-    isDisabled: isDisabled
+    isDisabled: isDisabled,
+    clearCookie: clearCookie
   };
 }
 
